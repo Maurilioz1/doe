@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #edf2f7;
+    background-color: #1a202c;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .header p {
+    margin-top: 8px;
+}
+
+.container .header h1,
+.container .header p {
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+    width: 940px;
+    margin: 0 auto;
+    background-color: #e53e3e;
+    margin-top: 32px;
+    border-radius: 8px;
+    padding: 16px 0;
+}
+
+.content p {
+    font-size: 14px;
+    color: #feb2b2;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 32px;
+    width: 50%;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+form input,
+select {
+    height: 50px;
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+form select {
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right
+        #ffffff;
+    -webkit-appearance: none;
+    background-position-x: 80%;
+    width: 25%;
+}
+
+form input:focus,
+form select:focus {
+    border: 2px solid #822727;
+    box-shadow: 0 0 3px #822727;
+    outline-offset: 0px;
+    outline: none;
+}
+
+option {
+    background-color: #822727;
+    color: #edf2f7;
+}
+
+form button {
+    height: 50px;
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: #822727;
+    color: #edf2f7;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #63171b;
+}
+
+section {
+    margin: 32px;
+    width: 50%;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #FEB2B2;
+}
+
+section div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section div span {
+    color: #e53e3e;
+    margin-right: 8px;
+}
+
+section h2 {
+    color: #1A202C;
+}
+
+section li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+    background-color: #edf2f7;
+    border: 1px solid #1a202c;
+    border-radius: 32px;
+    margin: 16px 0;
+    padding: 10px 0;
+    transition: background-color 0.2s;
+}
+
+section a {
+    text-decoration: none;
+    color: #1a202c;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+section a li span:first-child {
+    padding: 0 0 0 20px;
+}
+
+section a li span:last-child {
+    padding: 0 20px 0 0;
+}
+
+section li:hover {
+    background-color: #FC8181;
+    color: #edf2f7;
+}
+
