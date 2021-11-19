@@ -31,20 +31,26 @@
         </div>
 
         <div class="content">
-            <h2>A sua doação importa</h2>
+            <div>
+                <span class="material-icons icon">label_important</span>
+                <h2>A sua doação importa</h2>
+            </div>
             <p>Mais de 38.000 doações são necessárias todos os dias. <br>
                 Apenas 1,9% da população brasileira doa sangue.</p>
 
             <main>
-                <form action="" method="post">
-                    <h2>Entre na lista de doadores</h2>
+                <form>
+                    <div>
+                        <span class="material-icons icon"> add_circle_outline</span>
+                        <h2>Entre na lista de doadores</h2>
+                    </div>
 
-                    <input type="text">
-                    <input type="email">
+                    <input type="text" placeholder="Nome" id="name">
+                    <input type="email" placeholder="E-mail" id="email">
 
-                    <select></select>
+                    <select id="bloodType"></select>
 
-                    <button type="submit">Quero ajudar</button>
+                    <button type="submit" onclick="handleSubmit()">Quero ajudar</button>
                 </form>
 
                 <section>
