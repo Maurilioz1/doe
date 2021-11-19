@@ -169,7 +169,7 @@ section ul::-webkit-scrollbar-thumb {
 section li {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 95%;
     list-style: none;
     background-color: #edf2f7;
     border: 1px solid #1a202c;
