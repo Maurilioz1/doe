@@ -17,7 +17,7 @@ const getBloodTypeName = (bloodId) => {
         case 'o0':
             return 'O-';
         default:
-            alert('Típo sanguíneo inexistente.')
+            swal("Erro!", "Típo sanguíneo inexistente!", "error");
     }
 }
 
