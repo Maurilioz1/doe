@@ -172,7 +172,7 @@ body {
 .section .li {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 95%;
     list-style: none;
     background-color: var(--color-gray-100);
     border: 1px solid var(--color-gray-800);
