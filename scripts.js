@@ -132,7 +132,7 @@ const handleSubmit = () => {
             email.value = '';
             bloodType.value = 'a1';
 
-            swal("Obrigado!", "Agora uma vida pode ser salva!", "success");
+            swal("Obrigado!", "Agora vidas podem ser salvas graças a você!", "success");
         }
     }
 }
