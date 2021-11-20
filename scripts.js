@@ -1,21 +1,33 @@
 const getBloodTypeName = (bloodId) => {
-    if (bloodId === 'a1') {
-        return 'A +';
-    } else if (bloodId === 'a0') {
-        return 'A -';
-    } else if (bloodId === 'b1') {
-        return 'B +';
-    } else if (bloodId === 'b0') {
-        return 'B -';
-    } else if (bloodId === 'ab1') {
-        return 'AB +';
-    } else if (bloodId === 'ab0') {
-        return 'AB -';
-    } else if (bloodId === 'o1') {
-        return 'O +';
-    } else if (bloodId === 'o0') {
-        return 'O -';
+    switch (bloodId) {
+        case 'a1':
+            return 'A+';
+        case 'a0':
+            return 'A-';
+        case 'b1':
+            return 'B+';
+        case 'b0':
+            return 'B-';
+        case 'ab1':
+            return 'AB+';
+        case 'ab0':
+            return 'AB-';
+        case 'o1':
+            return 'O+';
+        case 'o0':
+            return 'O-';
+        default:
+            alert('Típo sanguíneo inexistente.')
     }
+}
+
+const validateEmail = (email) => {
+    const validEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return validEmail.test(String(email).toLowerCase());
+}
+
+function JSalert(){
+	swal("Congrats!", ", Your account is created!", "success");
 }
 
 const bloodTypes = [
@@ -67,9 +79,11 @@ bloodTypes.map(bloodType => {
     var bloodTypeText = document.createTextNode(bloodType.type);
 
     var option = document.createElement('option');
-    option.setAttribute('value', bloodTypeId);
-    option.appendChild(bloodTypeText);
 
+    option.classList.add('option');
+    option.setAttribute('value', bloodTypeId);
+
+    option.appendChild(bloodTypeText);
     select.appendChild(option);
 });
 
@@ -82,23 +96,43 @@ const handleSubmit = () => {
         bloodType: getBloodTypeName(bloodType.value),
     }
 
-    users.push(newUser);
+    if (newUser.name === '' || newUser.email === '') {
+        swal("Erro ao cadastrar!", "Verifique se todos os campos foram preenchidos!", "error");
+    } else {
+        if (!validateEmail(newUser.email)) {
+            swal("E-mail inválido!", "Didite um e-mail válido para prosseguir com a doação!", "error");
+        } else {
+            users.push(newUser);
 
-    var a = document.createElement('a');
-    var li = document.createElement('li');
-    var spanUserBloodType = document.createElement('span');
-    var spanUserName = document.createElement('span');
+            var bloodTypeText = document.createTextNode(newUser.bloodType);
+            var userNameText = document.createTextNode(newUser.name);
 
-    var bloodTypeText = document.createTextNode(newUser.bloodType);
-    var userNameText = document.createTextNode(newUser.name);
+            var a = document.createElement('a');
+            var li = document.createElement('li');
+            var spanUserBloodType = document.createElement('span');
+            var spanUserName = document.createElement('span');
 
-    a.setAttribute('href', `mailto:${newUser.email}`)
+            a.setAttribute('href', `mailto:${newUser.email}`);
+            a.classList.add('a');
 
-    spanUserBloodType.appendChild(bloodTypeText);
-    spanUserName.appendChild(userNameText);
+            li.classList.add('li');
 
-    ul.appendChild(a);
-    a.appendChild(li);
-    li.appendChild(spanUserBloodType);
-    li.appendChild(spanUserName);
+            spanUserBloodType.classList.add('bloodType');
+            spanUserBloodType.appendChild(bloodTypeText);
+
+            spanUserName.classList.add('userName');
+            spanUserName.appendChild(userNameText);
+
+            ul.appendChild(a);
+            a.appendChild(li);
+            li.appendChild(spanUserBloodType);
+            li.appendChild(spanUserName);
+
+            userName.value = '';
+            email.value = '';
+            bloodType.value = 'a1';
+
+            swal("Obrigado!", "Agora uma vida pode ser salva!", "success");
+        }
+    }
 }
